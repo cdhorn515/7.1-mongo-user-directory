@@ -1,6 +1,3 @@
-body{
-  background-color: red;
-}
 
 .outerContainer{
   display: flex;
@@ -11,5 +8,5 @@ body{
 
 .infoContainer{
   flex: 0 1 22%;
-  
+
 }

@@ -6,7 +6,7 @@ const data = require('./data.js');
 const app = express();
 
 //set up where to find css files
-app.use('/styles.css', express.static(path.join(__dirname, '/public/')));
+app.use('/public', express.static(path.join(__dirname, '/public/')));
 //set up template named mustache
 app.engine('mustache', mustacheExpress());
 
