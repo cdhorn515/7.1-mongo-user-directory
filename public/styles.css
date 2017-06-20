@@ -1,0 +1,15 @@
+body{
+  background-color: red;
+}
+
+.outerContainer{
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.infoContainer{
+  flex: 0 1 22%;
+  
+}

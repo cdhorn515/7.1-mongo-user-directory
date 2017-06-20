@@ -1,9 +1,12 @@
 const express = require('express');
 const mustacheExpress = require('mustache-express');
+const path = require('path');
 //this constant renames the object module.exports in the data.js file
 const data = require('./data.js');
 const app = express();
 
+//set up where to find css files
+app.use('/styles.css', express.static(path.join(__dirname, '/public/')));
 //set up template named mustache
 app.engine('mustache', mustacheExpress());
 

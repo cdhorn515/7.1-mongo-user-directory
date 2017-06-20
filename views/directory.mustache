@@ -6,14 +6,16 @@
   </head>
   <body>
     <div class="outerContainer">
+      {{#users}}
       <div class="infoContainer">
-        {{#users}}
+
         <img src={{avatar}} alt="headshot">
         <h5 class="name">{{name}}</h5>
-        <span class="job">{{job}}</span>
-        <span class="company">, {{company}}</span>
-        {{/users}}
+        <span class="job">{{job}}, </span>
+        <span class="company"> {{company}}</span>
+
       </div>
+      {{/users}}
     </div>
   </body>
 </html>
