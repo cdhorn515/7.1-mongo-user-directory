@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Company Directory</title>
+  </head>
+  <body>
+    <div class="outerContainer">
+      <div class="infoContainer">
+        {{#users}}
+        <img src={{avatar}} alt="headshot">
+        <h5 class="name">{{name}}</h5>
+        <span class="job">{{job}}</span>
+        <span class="company">, {{company}}</span>
+        {{/users}}
+      </div>
+    </div>
+  </body>
+</html>
