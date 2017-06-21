@@ -1,12 +1,13 @@
 const express = require('express');
 const mustacheExpress = require('mustache-express');
-const path = require('path');
+// const path = require('path');
 //this constant renames the object module.exports in the data.js file
 const data = require('./data.js');
 const app = express();
 
-//set up where to find css files
-app.use('/public', express.static(path.join(__dirname, '/public/')));
+//set up where to find css files using a direct path
+app.use(express.static('public'));
+// app.use(express.static('/public'));
 //set up template named mustache
 app.engine('mustache', mustacheExpress());
 
@@ -17,10 +18,33 @@ app.set('view engine', 'mustache');
 app.set('views', './views');
 
 //name of the view wanted to load--url will have /directory
-app.get('/directory', function (req, res) {
+app.get('/', function (req, res) {
   var context = data;
+  res.render('index', context);
+});
 
-  res.render('directory', context);
+//create another view to load, url will be /profile
+app.get('/:id', function(req, res){
+  var robot;
+
+  for(var i = 0; i < data.users.length; i++) {
+    if(data.users[i].id == req.params.id) {
+      robot = data.users[i];
+    }
+  }
+
+
+
+  // var robotId = {};
+  // console.log(req.params.id);
+  // for (var i = 0; i<data.users.length; i++) {
+  //   robotId = data.users[i];
+  //   if (robotId.id == req.params.id) {
+  //     console.log('here', robotId)
+  //     break;
+  //   }
+  // }
+  res.render('profile', robot);
 
 });
 
