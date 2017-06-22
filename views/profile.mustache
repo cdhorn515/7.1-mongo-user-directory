@@ -1,33 +1,58 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title>Profile page</title>
-    <link rel="stylesheet" href="styles.css">
-  </head>
-  <body>
 
-    <div class="profile">
-      <img src={{avatar}} alt="headshot" class ="profilepic">
-      <h2 class="name">{{name}}</h2>
-      <p>
-        <span class="city">{{city}}|</span>
-        <span class="country">{{country}}</span>
-        <span>{{job}}, {{company}}</span>
-      </p>
-      <p>
-        <span class="conactInfo">{{email}} | </span>
-        <span>{{phone}}</span>
-      </p>
-      {{#university}}<h3 class="education">Education</h3>{{university}}{{/university}}
+<head>
+  <meta charset="utf-8">
+  <title>Profile page</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
 
-      <h3 class="skills">Skills</h3>
-      <ul>
-        {{#skills}}
-        <li> {{.}}</li>
-        {{/skills}}
-      </ul>
+<body>
 
+  <div class="profileInfoCard">
+    <div class="topRow">
+      <div class="profile">
+        <img src= {{avatar}} alt="headshot" class="profilePic">
+        <div class="personalInfo">
+        <div class="name">
+          <h2 class="profileName">{{name}}</h2>
+        </div>
+        <div>
+          <p>
+            <span class="location">{{address.city}}, {{address.country}} | </span>
+            <span>{{job}}, {{company}}</span>
+          </p>
+          <p>
+            <span class="contactInfo">{{email}} | </span>
+            <span>{{phone}}</span>
+          </p>
+        </div>
+        </div>
+      </div>
     </div>
-  </body>
+        <div class="bottomRow">
+          <div class="educationInfo">
+
+
+          {{#university}}
+            <h3 class="education">Education</h3>
+            <span class="school">{{university}}</span>
+          {{/university}}
+          </div>
+        </div>
+        <div class="skills-flex">
+          <h3 class="skills">Skills</h3>
+
+          <ul>
+            {{#skills}}
+              <li> {{.}}</li>
+            {{/skills}}
+          </ul>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
 </html>

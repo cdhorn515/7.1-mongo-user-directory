@@ -36,7 +36,59 @@ a{
 }
 
 /*--------------PROFILE PAGE*/
+.profileInfoCard{
+  margin-left: 50px;
+  margin-top: 50px;
+}
 
-.profilepic{
+.profile{
+  margin-right: 35px;
+}
+
+.profilePic{
+  border: 1px solid #ECECEC;
   border-radius: 50%;
+  float: left;
+  width: 250px;
+  margin-right: 35px;
+}
+
+.personalInfo{
+  float: left;
+}
+.profileName{
+  color: #000;
+}
+
+.bottomRow{
+  clear: left;
+}
+
+.education{
+  padding-top: 15px;
+  float: left;
+  margin-left: 65px;
+}
+
+.school{
+  display: inline-block;
+  margin-top: 36px;
+  margin-left: 37px;
+}
+
+.skills-flex{
+  display: flex;
+}
+
+.skills{
+  clear: left;
+  margin-left: -46pxpx;
+}
+
+ul{
+  float: left;
+}
+
+li{
+  list-style: none;
 }

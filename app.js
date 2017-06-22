@@ -2,7 +2,7 @@ const express = require('express');
 const mustacheExpress = require('mustache-express');
 // const path = require('path');
 //this constant renames the object module.exports in the data.js file
-const data = require('./data.js');
+const data = require('./data');
 const app = express();
 
 //set up where to find css files using a direct path
