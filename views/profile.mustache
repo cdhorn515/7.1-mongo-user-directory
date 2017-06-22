@@ -19,8 +19,10 @@
         </div>
         <div>
           <p>
-            <span class="location">{{address.city}}, {{address.country}} | </span>
-            <span>{{job}}, {{company}}</span>
+          {{#address.city}}<span class="location">{{address.city}}, </span>{{/address.city}}
+            <span>{{address.country}} | </span>
+            {{#job}}<span>{{job}}, {{company}}</span>{{/job}}
+          {{^company}}<span class="company">{{job}}Available for Hire</span>{{/company}}
           </p>
           <p>
             <span class="contactInfo">{{email}} | </span>
@@ -51,8 +53,6 @@
 
         </div>
       </div>
-    </div>
-  </div>
 </body>
 
 </html>

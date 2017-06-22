@@ -62,6 +62,7 @@ a{
 
 .bottomRow{
   clear: left;
+  margin-left: 102px;
 }
 
 .education{
@@ -77,12 +78,14 @@ a{
 }
 
 .skills-flex{
+  clear: left;
+  margin-left: 250px;
   display: flex;
 }
 
 .skills{
   clear: left;
-  margin-left: -46pxpx;
+  margin-left: -46px;
 }
 
 ul{
