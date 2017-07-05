@@ -1,10 +1,22 @@
-// var data = require('../models/user');
-var data = require('../datascript.js');
+var data = require('../models/user');
+// var MongoClient = require("mongodb").MongoClient;
+
 
 module.exports = {
+
   index: function (req, res) {
-    var context = data;
-    res.render('index', context);
+      var context = {};
+    // MongoClient.connect("mongodb://loccalhost:27017/cdcrobotdb", (function(errors, db){
+      //need req if using in middleware in app.js
+      var col = req.db.collection('robots');
+      col.find({}).toArray(function(error,results){
+        console.log(error, results);
+        //setting model on context var --use in mustache template
+        context.model = results;
+        res.render('index', context);
+
+      });
+    // }
   },
   profile: function (req, res) {
     var robot;

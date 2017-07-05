@@ -1,4 +1,3 @@
-// var MongoClient = require("mongodb").MongoClient;
 
 var express = require('express');
 var mustacheExpress = require('mustache-express');
@@ -6,6 +5,8 @@ var mustacheExpress = require('mustache-express');
 //this constant renames the object module.exports in the data.js file
 // const data = require('./models/user');
 var userController = require('./controllers/user');
+var MongoClient = require('mongodb').MongoClient;
+
 var app = express();
 
 //set up where to find css files using a direct path
@@ -19,6 +20,14 @@ app.set('view engine', 'mustache');
 
 //telling express where to view our files--they are in the views folder
 app.set('views', './views');
+
+app.use(function(req, res, next) {
+  MongoClient.connect('mongodb://localhost:27017/cdcrobotdb', function(errors, db){
+    req.db = db;
+    next();
+  });
+
+});
 
 //name of the view wanted to load--url will have /directory
 app.get('/', userController.index);
