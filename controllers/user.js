@@ -1,4 +1,5 @@
-var data = require('../models/user');
+// var data = require('../models/user');
+var data = require('../datascript.js');
 
 module.exports = {
   index: function (req, res) {
