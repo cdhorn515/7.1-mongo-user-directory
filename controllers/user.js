@@ -25,5 +25,22 @@ module.exports = {
         robot = data.users[i];
       }
     }  res.render('profile', robot);
-  }
+  },
+  employedRobot: function (req, res) {
+    var col = req.db.collection('robots');
+
+  col.find({}, {job:1}).toArray(function(error, results){
+    console.log(results);
+    context.model = results;
+    res.render('employed', context);
+  });
+},
+unemployedRobot: function (req, res) {
+  var col = req.db.collection('robots');
+
+  col.find({}, {job:0}).toArray(function(error, results){
+    context.model = results;
+    res.render('unemployed', context);
+});
+}
 };

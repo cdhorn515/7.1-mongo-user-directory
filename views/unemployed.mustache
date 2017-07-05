@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Company Directory</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <header>
+      <a href="./views/employed">Employed</a>
+      <span>
+        <a href="./views/unemployed">Unemployed</a>
+      </span>
+    </header>
+    <div class="outerContainer">
+{{#model}}
+      <div class="infoContainer">
+
+        <img src={{avatar}} alt="headshot">
+        <h5 class="name"><a href="{{id}}">{{name}}</a></h5>
+        <div class="job-info">
+      {{#job}}<span class="job">{{job}}, {{company}}</span>{{/job}}
+        <span class="company">{{^company}}Available for Hire{{/company}}</span>
+        </div>
+
+      </div>
+{{/model}}
+    </div>
+  </body>
+</html>

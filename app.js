@@ -35,6 +35,10 @@ app.get('/', userController.index);
 //create another view to load, url will be /profile
 app.get('/:id', userController.profile);
 
+app.get('/employed', userController.employedRobot);
+
+app.get('/unemployed', userController.unemployedRobot);
+
 app.listen(3000, function(){
   console.log('successsfully started express app!');
 });
